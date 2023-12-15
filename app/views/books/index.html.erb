@@ -1,0 +1,61 @@
+<h2 class="head">Books</h2>
+<% @books = Book.all %>
+<div class="index">
+  <div class="index-title">
+    <h4 class="index-title-item">Title</h4>
+    <% @books.each do |book| %>
+      <span class=title><%= book.title %></span>
+    <% end %>
+  </div>
+  
+  <div class="index-body">
+    <h4 class="index-body-item">Body</h4>
+    <% @books.each do |book| %>
+      <span class=body><%= book.body %></span>
+    <% end %>
+  </div>
+  
+  <div class="index-item-box">
+  <% @books.each do |book| %>
+    <ul class="index-item">
+      <li class="index-item1"><%= link_to "Show", book_path(book.id) %></li>
+      <li class="index-item1"><%= link_to "Edit", edit_book_path(book.id) %></li>
+      <li class="index-item1"><%= link_to "Destroy", book_path(book.id), method: :delete, "data-confirm" => "Are you sure?" %></li>
+    </ul>
+  <% end %>
+  </div>
+</div>
+
+
+
+<div class="new-box">
+  <h2>New Book</h2>
+  <% if flash.now[:error] && flash.now[:error].any? %>
+    <%= flash.now[:error].count %> erroes prohibited this book from being saned:
+    <ul>
+      <% flash.now[:error].each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  
+  <%= form_with model:@book do |f| %>
+  <p class="new-item">Title</p>
+  <%= f.text_field :title %>
+  <p class="new-item">Body</p>
+  <%= f.text_area :body %>
+  <div class="new-item"><%= f.submit 'Create Book' %></div>
+<% end %>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var deleteButton = document.getElementById('deleteButton');
+    deleteButton.addEventListener('click', function() 
+      var result = confirm('Are you sure?');
+      if (result) {
+      } else {
+      }
+    });
+  });
+</script>
