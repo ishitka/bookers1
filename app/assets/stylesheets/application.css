@@ -25,54 +25,24 @@
 
 .index{
   margin-left: 40px;
-  display: flex;
-}
-
-.index-title{
-  flex-direction: column;
-  display: flex;
-}
-
-
-.index-title-item{
-  text-align: center;
-}
-
-.title{
-  margin: 2px;
 }
 
 .index-body{
-  display: flex;
-  flex-direction: column;
-  margin-right: 10px;
+  margin: auto 10px;
 }
 
-.body{
-  margin: 2px;
-}
-
-.index-body-item{
-  text-align: center;
-}
-
-.index-item-box{
-  padding-top: 20px;
-}
-
-.index-item1{
-  list-style: none;
-  display: inline-block;
-  margin: 2px;
-}
 
 .new-box{
-  display: inline-block;
   margin: 20px 40px;
+  display: inline-block;
 }
 
-.new-item{
-  margin-top: 4px;
+.new-title{
+  margin: auto 20px;
+}
+
+.new-body{
+  margin-bottom: 20px;
 }
 
 .show-title{

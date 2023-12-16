@@ -18,7 +18,7 @@
 
 
   <% if flash.now[:error] && flash.now[:error].any? %>
-    <%= flash.now[:error].count %> erroes prohibited this book from being saned:
+    <%= flash.now[:error].count %> errors prohibited this book from being saned:
       <ul>
         <% flash.now[:error].each do |message| %>
           <li><%= message %></li>
